@@ -5,14 +5,14 @@ import Search from "./Search";
 
 function App() {
   const [movie, setMovie] = React.useState("");
-  const [movies, setMovies] = React.useState("");
+
   return (
     <Switch>
       <Route exact path="/">
-        <Search movie={movie} setMovie={setMovie} setMovies={setMovies} />
+        <Search movie={movie} setMovie={setMovie} />
       </Route>
       <Route path="/movies">
-        <Movies movies={movies} />
+        <Movies movie={movie} />
       </Route>
     </Switch>
   );

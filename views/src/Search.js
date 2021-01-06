@@ -1,22 +1,17 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
-import axios from "axios";
-const BACKEND_API_ENDPOINT = "/movies";
 
-const Search = ({ movie, setMovie, setMovies }) => {
+const Search = ({ movie, setMovie }) => {
   const history = useHistory();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     // console.log(movie);
 
-    const search = { movie };
-    axios
-      .post(BACKEND_API_ENDPOINT, search)
-      .then((movies) => setMovies(movies.data));
-
     history.push("/movies");
-    setMovie("");
+    // setTimeout(() => {
+    //   setMovie("");
+    // }, 3000);
   };
   return (
     <div className="bg-indigo-100 h-screen w-full grid place-items-center">
